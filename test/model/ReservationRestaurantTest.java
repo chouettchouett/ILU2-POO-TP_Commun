@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class ReservationRestaurantTest {
-	static ReservationRestaurant reservation;
+	static FormulaireRestaurant reservation;
 	static final int NUM_TABLE = 2;
 	static final int NUM_SERVICE = 1;
 	static final int JOUR = 10;
@@ -16,13 +16,13 @@ class ReservationRestaurantTest {
 	
 	@BeforeAll
 	static void setUpBeforeClass() {
-		reservation = new ReservationRestaurant(JOUR, MOIS, NUM_SERVICE, NUM_TABLE);
+		reservation = new FormulaireRestaurant(JOUR, MOIS, NUM_SERVICE, NUM_TABLE);
 	}
 
 	@Test
 	void testToString() {
 		assertEquals(MESSAGE_RESA_1, reservation.toString(), "la sortie console devrait etre : " + MESSAGE_RESA_1);
-		Reservation reservation2 = new ReservationRestaurant(14, 12, 2, 3);
+		IReservation reservation2 = new FormulaireRestaurant(14, 12, 2, 3);
 		assertEquals(MESSAGE_RESA_2, reservation2.toString(), "la sortie console devrait etre : " + MESSAGE_RESA_2);
 	}
 

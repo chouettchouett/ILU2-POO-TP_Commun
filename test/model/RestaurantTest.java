@@ -36,7 +36,7 @@ class RestaurantTest {
 
 	@Test
 	void testReserver() {
-		ReservationRestaurant reservation = (ReservationRestaurant) restaurant.reserver(3, formulaire);
+		FormulaireRestaurant reservation = (FormulaireRestaurant) restaurant.reserver(3, formulaire);
 		assertEquals(MESSAGE_RESA,reservation.toString(), "la sortie console devrait etre : " + MESSAGE_RESA);
 	}
 
