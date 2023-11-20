@@ -1,13 +1,27 @@
 package model;
 
+// Q2 : Reservation est un bean, abstrait
 public abstract class Reservation {
-	private String date;
 
-	public Reservation(int mois ,int jour) {
-		this.date = jour+"/"+mois;
+	private int jour;
+	private int mois;
+
+	public Reservation(int jour, int mois) {
+		this.jour = jour;
+		this.mois = mois;
 	}
-	
+
+	public int getJour() {
+		return jour;
+	}
+
+	public int getMois() {
+		return mois;
+	}
+
+	@Override
 	public String toString() {
-		return"Le " + date+"\n";
+		return "Le " + jour + "/" + mois + " ";
 	}
+
 }
