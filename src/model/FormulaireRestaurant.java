@@ -1,15 +1,22 @@
 package model;
 
 public class FormulaireRestaurant extends Formulaire {
-	
-	private int nbLitSimple;
-	private int nbLitDouble;
-	private int numEntite;
 
-	public FormulaireRestaurant(int jour, int mois, int numEntite, int nbLitSimple, int nbLitDouble) {
+	private int nbPersonnes;
+	private int numService;
+
+	public FormulaireRestaurant(int jour, int mois, int nbPersonnes, int numService) {
 		super(jour, mois);
-		this.nbLitSimple = nbLitSimple;
-		this.nbLitDouble = nbLitDouble;
+		this.nbPersonnes = nbPersonnes;
+		this.numService = numService;
+	}
+
+	public int getNombrePersonnes() {
+		return nbPersonnes;
+	}
+
+	public int getNumService() {
+		return numService;
 	}
 
 }
