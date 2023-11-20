@@ -1,19 +1,42 @@
 package model;
 
 public class ReservationHotel extends Reservation {
-    private int nbLitSimple=0;
-    private int nbLitDouble=0;
-    private int noChambre;
-	public ReservationHotel(int jour, int mois,int nbLitSimple,int nbLitDouble,int noChambre) {
-		super(mois, jour);
-		this.nbLitSimple=nbLitSimple;
-		this.nbLitDouble=nbLitDouble;
-		this.noChambre=noChambre;
-		// TODO Auto-generated constructor stub
+
+	private int nbLitSimple;
+	private int nbLitDouble;
+	private String identificationChambre;
+
+	public ReservationHotel(int jour, int mois, int nbLitSimple, int nbLitDouble, String identificationChambre) {
+		super(jour, mois);
+		this.nbLitSimple = nbLitSimple;
+		this.nbLitDouble = nbLitDouble;
+		this.identificationChambre = identificationChambre;
 	}
 
+	@Override
 	public String toString() {
-		return super.toString()+" : Chambre n°"+ noChambre +" avec " + nbLitSimple +" lit simple et " + nbLitDouble +" lit double";
+		String chaine = super.toString();
+		chaine += "Votre rÃ©servation concerne la chambre " + identificationChambre + " comportant ";
+		if (nbLitDouble != 0) {
+			chaine += nbLitDouble;
+			if (nbLitDouble > 1) {
+				chaine += " lits doubles ";
+			} else {
+				chaine += " lit double ";
+			}
+		}
+		if (nbLitSimple != 0) {
+			chaine += "et ";
+		}
+		if (nbLitSimple != 0) {
+			chaine += nbLitSimple;
+			if (nbLitSimple > 1) {
+				chaine += " lits simples ";
+			} else {
+				chaine += " lit simple ";
+			}
+		}
+		return chaine;
 	}
 
 }
